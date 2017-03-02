@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>SlideShow</title>
+	<link rel="stylesheet" type="text/css" href="css/slideshow.css" />
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.slideshow.js"></script>
+	<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen"/><![endif]-->
+</head>
+<body>
+<div class="page">
+	<div class="page-holder">
+		<div id="article">
+			<h1>SlideShow (fade эффект)</h1>
+			<p>Данный плагин позволяет реализовать слайдшоу с fade-эффектом. У плагина довольно широкий выбор настроек, который позволяет применять его во многих ситуациях: от фейд-ротации обычных изображений до полноценного слайдшоу с авторотацией, паузой на ховер, педжинацией и т.д.</p>
+			<p>В плагине доступны следующие опции:</p>
+			<pre class="javascript">
+				jQuery('div.slideshow').fadeGallery({
+					slides: 'ul.slideset > li',          // селектор слайдов которые будут меняться с фейдом
+					btnPrev: 'a.btn-prev',               // селектор кнопки "предыдущий слайд"
+					btnNext: 'a.btn-next',               // селектор кнопки "следующий слайд"
+					activeClass:'active',                // класс активной pagination-ссылки и текущего слайда
+					disabledClass:'disabled',            // класс заблокированной кнопки при отключенном циклическом вращении (circularRotation)
+					generatePagination: false,           // селектор пустого блока в который сгенерировать pagination-ссылки (по умолчанию отключен - false)
+					pagerLinks: '.pagination li',        // селектор существующих pagination-ссылок в HTML (работает вместо generatePagination)
+					currentNumber: 'span.current-num',   // селектор блока в котором отображается текущий слайд галлереи
+					totalNumber: 'span.total-num',       // селектор блока в котором отображается общее количество слайдов в галлерее
+					circularRotation: true,              // циклическая ротация слайдов
+					switchSimultaneously: true,          // одновременное переключение слайдов
+					disableWhileAnimating: false,        // игнорировать все действия пользователя пока в галерее происходит анимация
+					autoRotation: false,                 // авторотация Вкл/Выкл
+					pauseOnHover: true,                  // пауза авторотации при ховере блока галереи
+					autorotationStopAfterClick: false,   // остановить авторотацию после клика на prev/next/pagination?
+					autoHeight: false,                   // автоматическая высота маски галереи под высоту текущего слайда
+					switchTime: 4000,                    // задержка авторотации (4000мсек = 4сек)
+					animSpeed: 600,                      // длительность фейд анимации (600мсек = 0,6сек)
+					useSwipe: false,                     // использовать swipe-жесты для пролистывания слайдов
+					disableFadeIE: false                 // отключить fade-эффект в IE (мгновенное переключение)
+				});
+			</pre>
+			
+			<h2>Требования к верстке</h2>
+			<ul>
+				<li>Слайды фейд-галлереи должны висеть друг над другом на <strong>position:absolute</strong> (как стопка бумаги)</li>
+				<li>На активном слайде галлереи <strong>z-index</strong> должен быть выше, чем на остальных (стилизовать через .active на слайдах)</li>
+			</ul>
+			
+			<h2>Примеры использования</h2>
+			<div class="live-example">
+				<h3>Обычное слайдшоу</h3>
+				<div class="gallery-holder slideshow">
+					<div class="gallery">
+						<div class="gholder">
+							<a class="btn-prev" href="#">&lt;</a>
+							<a class="btn-next" href="#">&gt;</a>
+							<div class="gmask">
+								<div class="slideset">
+									<div class="slide c1 active">Slide 1</div>
+									<div class="slide c2">Slide 2</div>
+									<div class="slide c3" style="height:300px">Slide 3</div>
+									<div class="slide c4">Slide 4</div>
+									<div class="slide c5">Slide 5</div>
+								</div>
+							</div>
+						</div>
+						<div class="pagination">
+							<ul>
+								<li class="active"><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+							</ul>
+						</div>
+						<strong>
+							<span class="cur-num">1</span> of <span class="all-num">5</span>
+						</strong>
+					</div>
+					<button class="btn-play">Play</button>
+					<button class="btn-pause">Pause</button>
+					<button class="btn-play-pause">Play/Pause</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

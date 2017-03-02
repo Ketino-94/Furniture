@@ -1,0 +1,60 @@
+.gallery-holder {
+	position:relative;
+	overflow: hidden;
+}
+
+.gallery-holder .gholder {
+	overflow: hidden;
+	width: 100%;
+}
+.gallery-holder .gmask {
+	position: relative;
+	overflow: hidden;
+}
+.gallery-holder .gmask .slideset {
+	list-style: none;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	width:100%;
+}
+.gallery-holder .gmask .slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:100%;
+}
+.slideshow .gmask div.active {
+	z-index: 1;
+}
+.gallery-holder a.btn-prev,
+.gallery-holder a.btn-next {
+	float: left;
+	width: 30px;
+	height: 30px;
+}
+.gallery-holder a.btn-next {
+	float: right;
+}
+.gallery-holder .pagination ul{
+	font-weight: bold;
+	list-style: none;
+	text-align: center;
+	padding:0;
+	margin: 0;
+}
+.gallery-holder .pagination ul li {
+	
+}
+.gallery-holder .pagination a {
+	
+}
+.gallery-holder .pagination .active a {
+	
+}
+.gallery-holder .pagination a:hover,
+.gallery-holder a.btn-prev:hover,
+.gallery-holder a.btn-next:hover {text-decoration:none;}
+.gallery-holder a.disabled {
+	
+}
